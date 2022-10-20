@@ -26,7 +26,7 @@ const SignUp = () => {
         {/* Entry Fields */}
         <div className="p-40">
           <div>
-            <h1 className="font-semibold text-3xl">Create an account</h1>
+            <h1 className="font-semibold text-3xl">Create business account</h1>
             <small className="text-gray-400">
               Let's get started with your new account it's totally free
             </small>
@@ -37,36 +37,40 @@ const SignUp = () => {
                     required: "This field is required❗️",
                   })}
                   placeholder="Full Name"
-                  className="p-4 border-b-2 border-gray-200"
+                  className="p-4 border-b-2 border-gray-200 w-full focus:outline-none"
                 />
                 <input
                   {...register("userName", {
                     required: "This field is required ❗️",
                   })}
                   placeholder="Username"
-                  className="p-4 border-b-2 border-gray-200"
+                  className="p-4 border-b-2 border-gray-200 w-full focus:outline-none"
                 />
                 <input
                   {...register("email", {
                     required: "This field is required ❗️",
                   })}
                   placeholder="Email"
-                  className="p-4 border-b-2 border-gray-200"
+                  className="p-4 border-b-2 border-gray-200 w-full focus:outline-none"
                 />
                 <input
                   {...register("password", {
                     required: "This field is required ❗️",
                   })}
                   placeholder="Password"
-                  className="p-4 border-b-2 border-gray-200"
+                  className="p-4 border-b-2 border-gray-200 w-full focus:outline-none"
                 />
-                <button type="submit" className="border-2 rounded-lg p-2">
+                <button
+                  type="submit"
+                  className="w-full text-white rounded-lg p-3 mt-10 bg-[#342c79]"
+                >
                   Create Account
                 </button>
               </form>
-              <div className="border-2 rounded-lg p-2">
+              <button className="border-2 mt-3  border-gray-400 flex justify-center gap-2 items-center rounded-lg p-3">
+                <img src="/Google.png" className="w-7"/>
                 Sign Up with Google Account
-              </div>
+              </button>
             </div>
           </div>
         </div>
