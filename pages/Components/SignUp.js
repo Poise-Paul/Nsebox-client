@@ -1,8 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { CMultiSelect } from "@coreui/react-pro";
-import "@coreui/coreui/dist/css/coreui.min.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Select from "react-select";
 
 const SignUp = () => {
   const {
@@ -19,40 +17,28 @@ const SignUp = () => {
     },
   });
   const getForm = (data) => console.log("🟢", data);
-  const currencyOptions = [
-    {
-      value: 0,
-      text: "Angular",
-    },
-    {
-      value: 1,
-      text: "Bootstrap",
-    },
-    {
-      value: 2,
-      text: "React.js",
-    },
-    {
-      value: 3,
-      text: "Vue.js",
-    },
-    {
-      label: "backend",
-      options: [
-        {
-          value: 4,
-          text: "Django",
-        },
-        {
-          value: 5,
-          text: "Laravel",
-        },
-        {
-          value: 6,
-          text: "Node.js",
-        },
-      ],
-    },
+  const multiField = [
+    { value: "BTC", label: "Bitcoin" },
+    { value: "ETH", label: "Ethereum" },
+    { value: "ALGO", label: "Algorand" },
+    { value: "BCH", label: "Bitcoin Cash" },
+    { value: "BNB", label: "BNB Beacon Chain" },
+    { value: "BSC", label: "BNB Smart Chain" },
+    { value: "CELO", label: "Celo" },
+    { value: "DOGE", label: "Doge" },
+    { value: "EGLD", label: "Elrond" },
+    { value: "FLOW", label: "Flow" },
+    { value: "ONE", label: "Harmony" },
+    { value: "KLAY", label: "Klaytn" },
+    { value: "KCS", label: "KuCoin Community Chain" },
+    { value: "LTC", label: "Litecoin" },
+    { value: "MATIC", label: "Polygon" },
+    { value: "XRP", label: "Ripple" },
+    { value: "SOL", label: "Solana" },
+    { value: "XLM", label: "Stellar" },
+    { value: "IA", label: "TRON" },
+    { value: "VET", label: "VeChain" },
+    { value: "XDC", label: "XinFin" },
   ];
   return (
     <div className="grid grid-cols-3 p-5">
@@ -112,22 +98,35 @@ const SignUp = () => {
                 <small className="text-red-500">
                   {errors.password?.message}
                 </small>
+                <div className="mt-5">
+                  <small
+                    title="Select Crypto Currencies which you want to accept as pasyment for your products/services"
+                    className="capitalize text-gray-400"
+                  >
+                    Select your preffered currencies
+                  </small>
+                  <Select
+                    defaultValue={[
+                      multiField[0],
+                      multiField[1],
+                      multiField[3],
+                    ]}
+                    isMulti
+                    name="currencies"
+                    options={multiField}
+                    className="basic-multi-select"
+                    classNamePrefix="select"
+                  />
+                </div>
+
                 <button
                   type="submit"
                   className="w-full text-white rounded-lg p-3 mt-10 bg-[#342c79]"
                 >
                   Create Account
                 </button>
-                {/* Add Multi Select */}
-                <label
-                  htmlFor=""
-                  title="Select Crypto Currencies which you want to accept as pasyment for your products/services"
-                >
-                  Select your preffered crypto currencies
-                </label>
-                <CMultiSelect options={currencyOptions} />
               </form>
-              <button className="border-2 mt-3  border-gray-400 flex justify-center gap-2 items-center rounded-lg p-3">
+              <button className="border-2 mt-3 hover:bg-gray-200 transition duration-300 ease-in-out border-gray-400 flex justify-center gap-2 items-center rounded-lg p-3">
                 <img src="/Google.png" className="w-7" />
                 Sign Up with Google Account
               </button>
