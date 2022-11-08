@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Select from "react-select";
-import Cancel from "./comps/Icons";
+import { Cancel } from "./Icons";
 
 const SignUp = () => {
   const {
