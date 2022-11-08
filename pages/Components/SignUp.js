@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Select from "react-select";
-import { Cancel } from "./comps/icons";
+import Cancel from "./comps/Icons";
 
 const SignUp = () => {
   const {
@@ -54,12 +54,11 @@ const SignUp = () => {
   const [currentStaffMail, setCurrentStaffMail] = useState("");
   const addNewStaff = () => {
     if (currentStaffMail == "") {
-      alert("You need to fill in your staff email")
+      alert("You need to fill in your staff email");
     } else {
       setStaffMails((prev) => [...prev, currentStaffMail]);
       setCurrentStaffMail("");
     }
-    
   };
   const removeStaff = (staff) => {
     setStaffMails((prev) => prev.filter((x) => x !== staff));
@@ -151,9 +150,12 @@ const SignUp = () => {
                     {/* Enter Mails */}
                     {staffMails.length !== 0 && (
                       <div className="flex mt-3 bg-gray-200 rounded-lg p-2">
-                        {staffMails.map((staff) => {
+                        {staffMails.map((staff, key) => {
                           return (
-                            <div className="bg-gray-400 flex gap-2 p-2">
+                            <div
+                              key={key}
+                              className="bg-gray-400 flex gap-2 p-2"
+                            >
                               <h1> {staff}</h1>
                               <div onClick={() => removeStaff(staff)}>
                                 <Cancel />
@@ -172,7 +174,13 @@ const SignUp = () => {
                       Create Account
                     </button>
                     <button className="border-2 mt-3 w-full hover:bg-gray-200 transition hover:border-none duration-300 ease-in-out border-gray-400 flex justify-center gap-2 items-center rounded-lg p-3">
-                      <Image src="/Google.png" className="w-5" height={20} width={20} />
+                      <Image
+                        src="/Google.png"
+                        alt="google-image"
+                        className="w-5"
+                        height={20}
+                        width={20}
+                      />
                       Sign Up with Google Account
                     </button>
                   </div>

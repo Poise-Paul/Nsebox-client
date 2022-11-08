@@ -1,4 +1,6 @@
-export const Cancel = () => {
+import React from 'react'
+
+const Cancel = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,5 +19,4 @@ export const Cancel = () => {
   );
 };
 
-
-
+export default Cancel;
