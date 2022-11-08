@@ -1,8 +1,10 @@
+import Image from "next/image";
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Select from "react-select";
 import { Cancel } from "./comps/icons";
+
 const SignUp = () => {
   const {
     register,
@@ -68,10 +70,11 @@ const SignUp = () => {
         {/* Logo */}
         <div className="">
           <div className="py-5">
-            <img
+            <Image
               src="/Nsebox-main-logo.png"
               alt="nsebox-logo"
-              className="w-24"
+              height={50}
+              width={130}
             />
           </div>
           <div>
@@ -169,7 +172,7 @@ const SignUp = () => {
                       Create Account
                     </button>
                     <button className="border-2 mt-3 w-full hover:bg-gray-200 transition hover:border-none duration-300 ease-in-out border-gray-400 flex justify-center gap-2 items-center rounded-lg p-3">
-                      <img src="/Google.png" className="w-5" />
+                      <Image src="/Google.png" className="w-5" height={20} width={20} />
                       Sign Up with Google Account
                     </button>
                   </div>
@@ -236,7 +239,7 @@ const SignUp = () => {
                   className="capitalize text-gray-500 hover:underline font-medium cursor-pointer"
                   onClick={() =>
                     alert(
-                      "We're currently Working on our personal Accounts 🙌💳"
+                      "We &apos; re currently Working on our personal Accounts 🙌💳"
                     )
                   }
                 >
@@ -255,10 +258,12 @@ const SignUp = () => {
       </div>
       <div className="flex p-10">
         <div className="mt-12">
-          <img
+          <Image
             src="/E-commerce-dev.png"
             alt="mobile-dev"
             className="h-full object-cover"
+            width={500}
+            height={700}
           />
         </div>
       </div>
